@@ -8,7 +8,7 @@ import ua.krasnovnikita.robotimpl.interfaces.Head;
 import ua.krasnovnikita.robotimpl.interfaces.Leg;
 import ua.krasnovnikita.robotimpl.interfaces.Robot;
 
-public class ModelT100 implements Robot, InitializingBean, DisposableBean {
+public class ModelT100 extends BaseModel implements Robot, InitializingBean, DisposableBean {
 	private Hand hand;
 	private Head head;
 	private Leg leg;
@@ -17,10 +17,6 @@ public class ModelT100 implements Robot, InitializingBean, DisposableBean {
 	private int year;
 	private boolean soundEnabled;
 
-	public ModelT100() {
-		super();
-	}
-
 	public ModelT100(String color, int year, boolean soundEnabled) {
 		super();
 		this.color = color;
@@ -28,18 +24,17 @@ public class ModelT100 implements Robot, InitializingBean, DisposableBean {
 		this.soundEnabled = soundEnabled;
 	}
 
-	public ModelT100(Hand hand, Head head, Leg leg) {
+	public ModelT100() {
 		super();
-		this.hand = hand;
-		this.head = head;
-		this.leg = leg;
+	}
+
+	public ModelT100(Hand hand, Head head, Leg leg) {
+		super(hand, head, leg);
+
 	}
 
 	public ModelT100(Hand hand, Head head, Leg leg, String color, int year, boolean soundEnabled) {
-		super();
-		this.hand = hand;
-		this.head = head;
-		this.leg = leg;
+		super(hand, head, leg);
 		this.color = color;
 		this.year = year;
 		this.soundEnabled = soundEnabled;
