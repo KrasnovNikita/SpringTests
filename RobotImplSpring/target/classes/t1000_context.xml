@@ -8,7 +8,7 @@
 	<import resource="sony_context.xml" />
 	<import resource="toshiba_context.xml" />
 	<bean id="t100" class="ua.krasnovnikita.robotimpl.robot.ModelT100"
-		 parent="baseModel">
+		 parent="baseModel" scope="prototype">
 
 
 		<constructor-arg value="silver" index="3" type="String"></constructor-arg>
